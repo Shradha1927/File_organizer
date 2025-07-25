@@ -2,10 +2,10 @@ import os
 import shutil
 from colorama import Fore, Style, init
 
-# Initialize colorama for gentle console colors
+# Initialize colorama 
 init(autoreset=True)
 
-# Define the path of the folder to be organized
+# Defining the path 
 folder_path = input("Please enter the full path of the folder you'd like to organize:\n> ").strip()
 
 # A palette
@@ -15,7 +15,7 @@ PASTEL_CYAN = Fore.LIGHTCYAN_EX
 PASTEL_RED = Fore.LIGHTRED_EX
 PASTEL_GRAY = Fore.LIGHTBLACK_EX
 
-# Mapping of file extensions to their corresponding categories
+# Mapping of file extensions 
 extension_mapping = {
     "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"],
     "Documents": [".pdf", ".docx", ".txt", ".xlsx", ".pptx"],
@@ -26,14 +26,14 @@ extension_mapping = {
     "Others": []
 }
 
-# Determines the category based on file extension
+# Determines the categories
 def determine_category(extension):
     for category, extensions in extension_mapping.items():
         if extension.lower() in extensions:
             return category
     return "Others"
 
-# The core function that organizes the folder contents
+# The core function that organizes 
 def organize_folder(path):
     if not os.path.exists(path):
         print(PASTEL_RED + "The provided path does not exist. Please verify and try again.")
@@ -64,7 +64,7 @@ def organize_folder(path):
 
     print(PASTEL_PURPLE + "\nThe task is complete. Your folder is now gracefully arranged.")
 
-# Let the operation commence
+
 organize_folder(folder_path)
 
 
